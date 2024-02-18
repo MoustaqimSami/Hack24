@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://hwcdh4juf7hr"]
+
+[ext_resource type="Texture2D" uid="uid://cx4rx2mcku6wt" path="res://assets/down left.png" id="1_x064x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uejyr"]
+atlas = ExtResource("1_x064x")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2007n"]
+atlas = ExtResource("1_x064x")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yd7o"]
+atlas = ExtResource("1_x064x")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erbut"]
+atlas = ExtResource("1_x064x")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqeh4"]
+atlas = ExtResource("1_x064x")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwif5"]
+atlas = ExtResource("1_x064x")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c2u2"]
+atlas = ExtResource("1_x064x")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pjwc"]
+atlas = ExtResource("1_x064x")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_klnh4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uejyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2007n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yd7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erbut")
+}],
+"loop": true,
+"name": &"walk_downleft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqeh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwif5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c2u2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pjwc")
+}],
+"loop": true,
+"name": &"walk_downright",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_upleft",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_klnh4")
+animation = &"walk_upleft"
