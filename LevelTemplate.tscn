@@ -1,3 +1,30 @@
-[gd_scene format=3 uid="uid://b7ks0lngip2fs"]
+[gd_scene load_steps=8 format=3 uid="uid://b7ks0lngip2fs"]
+
+[ext_resource type="Texture2D" uid="uid://blk6xfx3s3llo" path="res://assets/floor.png" id="1_l7qav"]
+[ext_resource type="Texture2D" uid="uid://b53tk0jv2fcfn" path="res://assets/walls.png" id="2_k50gf"]
+[ext_resource type="Texture2D" uid="uid://144ge6amfjil" path="res://assets/borders.png" id="3_nvpe6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q0os1"]
+texture = ExtResource("1_l7qav")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_duwxm"]
+texture = ExtResource("2_k50gf")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iq32e"]
+texture = ExtResource("3_nvpe6")
+
+[sub_resource type="TileSet" id="TileSet_8y1v0"]
+sources/0 = SubResource("TileSetAtlasSource_q0os1")
+sources/1 = SubResource("TileSetAtlasSource_duwxm")
+sources/4 = SubResource("TileSetAtlasSource_iq32e")
 
 [node name="LevelTemplate" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_8y1v0")
+format = 2
