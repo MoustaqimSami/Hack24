@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Calgary Hacks-2024-limited-space-game"
-run/main_scene="res://MainScene.tscn"
+run/main_scene="res://PlayerNode.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+InteractionManager="*res://interaction/InteractionManager.tscn"
 
 [dotnet]
 

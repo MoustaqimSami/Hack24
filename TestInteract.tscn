@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdhrwwxk8xd7p"]
+
+[ext_resource type="PackedScene" uid="uid://bwspequ1rpyf5" path="res://interaction/interactionarea/InteractionArea.tscn" id="1_lsqdw"]
+[ext_resource type="Script" path="res://TestInteract.gd" id="1_u0ira"]
+[ext_resource type="PackedScene" uid="uid://hwcdh4juf7hr" path="res://PlayerNode.tscn" id="2_rcn4h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vepj8"]
+radius = 25.0
+
+[node name="TestInteract" type="Node2D"]
+script = ExtResource("1_u0ira")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_lsqdw")]
+position = Vector2(65, 57)
+action_name = "inspect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_vepj8")
+
+[node name="Player" parent="." instance=ExtResource("2_rcn4h")]
