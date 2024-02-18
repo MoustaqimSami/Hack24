@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 InteractionManager="*res://interaction/InteractionManager.tscn"
+PopupDialogTemplate="*res://PopupDialogTemplate.gd"
+LevelTemplate="*res://LevelTemplate.gd"
 
 [dotnet]
 

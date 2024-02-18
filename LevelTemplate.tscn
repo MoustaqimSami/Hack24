@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://b7ks0lngip2fs"]
 
+[ext_resource type="Script" path="res://LevelTemplate.gd" id="1_bhcje"]
 [ext_resource type="Texture2D" uid="uid://blk6xfx3s3llo" path="res://assets/floor.png" id="1_l7qav"]
 [ext_resource type="Texture2D" uid="uid://b53tk0jv2fcfn" path="res://assets/walls.png" id="2_k50gf"]
 [ext_resource type="Texture2D" uid="uid://144ge6amfjil" path="res://assets/borders.png" id="3_nvpe6"]
-[ext_resource type="PackedScene" uid="uid://hwcdh4juf7hr" path="res://PlayerNode.tscn" id="4_cosw6"]
 [ext_resource type="Script" path="res://TileMap.gd" id="4_g74rr"]
 [ext_resource type="Script" path="res://Wall1.gd" id="5_80p70"]
 [ext_resource type="Script" path="res://Wall2.gd" id="6_w1iu8"]
@@ -36,15 +36,14 @@ texture = ExtResource("3_nvpe6")
 sources/0 = SubResource("TileSetAtlasSource_u8xj2")
 
 [node name="LevelTemplate" type="Node2D"]
+position = Vector2(8, 29)
+script = ExtResource("1_bhcje")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8y1v0")
 format = 2
 layer_0/tile_data = PackedInt32Array(2, 1, 0, -65534, 1, 0, -131070, 1, 0, -196606, 1, 0, -262142, 1, 0, -262141, 1, 0, -262140, 1, 0, -262139, 1, 0, -262138, 1, 0, -262137, 1, 0, -196601, 1, 0, -131065, 1, 0, -65529, 1, 0, 7, 1, 0, 5, 1, 0, 4, 1, 0, 3, 1, 0, -65533, 1, 0, -131069, 1, 0, -196605, 1, 0, -196604, 1, 0, -131068, 1, 0, -65532, 1, 0, -196603, 1, 0, -131067, 1, 0, -196602, 1, 0, -131066, 1, 0, -65530, 1, 0, -65531, 1, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 458759, 0, 0, 524295, 0, 0, 524294, 0, 0, 458758, 0, 0, 393222, 0, 0, 327686, 0, 0, 262150, 0, 0, 196614, 0, 0, 131078, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 524292, 0, 0, 458756, 0, 0, 393220, 0, 0, 327684, 0, 0, 262148, 0, 0, 196612, 0, 0, 131076, 0, 0, 131075, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 393218, 0, 0, 458755, 0, 0, 524291, 0, 0, 458754, 0, 0, 327683, 0, 0, 262147, 0, 0, 196611, 0, 0, 393219, 0, 0, 6, 1, 0, 393223, 0, 0, 524290, 0, 0)
 script = ExtResource("4_g74rr")
-
-[node name="Player" parent="." instance=ExtResource("4_cosw6")]
-position = Vector2(-111, -34)
 
 [node name="Wall1" type="CharacterBody2D" parent="."]
 script = ExtResource("5_80p70")

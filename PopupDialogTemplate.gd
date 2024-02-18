@@ -2,31 +2,32 @@ extends Control
 
 var correct_answer = "lol"
 var input_text = ""
+signal incorrect_answer
 var submitted = false
+@onready var level = LevelTemplate
 
 func _ready():
-	get_tree().paused = false
+	pass
 func _on_submit_button_pressed():
-	input_text = $LineEdit.text
 	submitted = true
-	get_tree().paused = false
-	is_answer_correct()
+	input_text = $LineEdit.text
+	print(submitted)
 	hide() # Hide the popup
 
 func _on_cancel_button_pressed():
-	input_text = ""
 	submitted = false
-	get_tree().paused = false
+	input_text = ""
 	hide() # Hide the popup
 
 func get_input_text():
 	return input_text
-
-func was_submitted():
-	return submitted
 	
 func is_answer_correct():
 	if input_text.to_lower() == correct_answer.to_lower():
-		print("Correct!")
+		level.correctAnswer()
+		return true
 	else:
-		print("Incorrect")
+		level.incorrectAnswer()
+		return false
+
+
