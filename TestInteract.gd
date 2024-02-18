@@ -7,6 +7,7 @@ func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _on_interact():
-	print("GUI shows up")
+	var popup = preload("res://PopupDialogTemplate.tscn").instantiate()
+	add_child(popup)
+
